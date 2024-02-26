@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Move2d : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator animacao;
     public int moveSpeed;
     private float direction;
 
@@ -24,7 +26,9 @@ public class Move2d : MonoBehaviour
         //Personagem virar para a direita//
         facinLeft = transform.localScale;
         facinLeft.x = facinLeft.x * -1; //O comando inverte os sinais, por isso o uso de *
-        rb = GetComponent<Rigidbody2D>(); 
+        rb = GetComponent<Rigidbody2D>();
+
+        animacao = GetComponent<Animator>();
     }
     void Update()
     { 
@@ -53,5 +57,7 @@ public class Move2d : MonoBehaviour
         }
 
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
+        
+        animacao.SetFloat("Velocidade", Mathf.Abs(direction));
     }
 }
