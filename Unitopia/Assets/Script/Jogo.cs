@@ -8,7 +8,7 @@ public class Jogo : MonoBehaviour
     private float vida = 100;
 
     void Start(){
-        
+
     }
 
     void Update(){
@@ -17,7 +17,6 @@ public class Jogo : MonoBehaviour
             vida -= 10.0f;
             barra.AlterarVida(vida);
         }
-
     }
 
 }
