@@ -25,27 +25,26 @@ public class Move2d : MonoBehaviour
         facinRight = transform.localScale;
         //Personagem virar para a direita//
         facinLeft = transform.localScale;
-        facinLeft.x = facinLeft.x * -1; //O comando inverte os sinais, por isso o uso de *
+        facinLeft.x = -facinLeft.x; //O comando inverte os sinais, por isso o uso de *
         rb = GetComponent<Rigidbody2D>();
 
         animacao = GetComponent<Animator>();
     }
     void Update()
     { 
+        //pular
         taNoChao = Physics2D.OverlapCircle(detectaChao.position, 0.2f, oQueEhChao);
-        if(Input.GetButtonDown("Jump") && taNoChao == true)
+        // Define o parâmetro "Pulando" da animação
+        animacao.SetBool("Pulando", !taNoChao);
+
+        // Verifica a entrada do jogador para pular
+        if(Input.GetButtonDown("Jump") && (taNoChao || pulosExtras > 0))
         {
             rb.velocity = Vector2.up * 12;
-        }
-        if(Input.GetButtonDown("Jump") && taNoChao == false && pulosExtras >0)
-        {
-            rb.velocity = Vector2.up * 12;
-            pulosExtras--;
-        }
-        if(taNoChao){
-            pulosExtras = 1;
+            pulosExtras -= 1;
         }
 
+        //direção do jogador
         direction = Input.GetAxis("Horizontal");
         if(direction > 0){
             //olhando para a direita
@@ -55,7 +54,7 @@ public class Move2d : MonoBehaviour
             //olhando para a esquerda
             transform.localScale = facinLeft;
         }
-
+        // Aplica a velocidade ao jogador
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
         
         animacao.SetFloat("Velocidade", Mathf.Abs(direction));
