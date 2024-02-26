@@ -40,7 +40,7 @@ public class Move2d : MonoBehaviour
         // Verifica a entrada do jogador para pular
         if(Input.GetButtonDown("Jump") && (taNoChao || pulosExtras > 0))
         {
-            rb.velocity = Vector2.up * 12;
+            rb.velocity = Vector2.up * 15;
             pulosExtras -= 1;
         }
 
