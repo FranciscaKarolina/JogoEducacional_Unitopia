@@ -15,6 +15,8 @@ public class Move2d : MonoBehaviour
     public Transform detectaChao;
     public LayerMask oQueEhChao;
 
+    public int pulosExtras = 1;
+
     void Start()
     {
         //Personagem virar para a direita//
@@ -30,6 +32,14 @@ public class Move2d : MonoBehaviour
         if(Input.GetButtonDown("Jump") && taNoChao == true)
         {
             rb.velocity = Vector2.up * 12;
+        }
+        if(Input.GetButtonDown("Jump") && taNoChao == false && pulosExtras >0)
+        {
+            rb.velocity = Vector2.up * 12;
+            pulosExtras--;
+        }
+        if(taNoChao){
+            pulosExtras = 1;
         }
 
         direction = Input.GetAxis("Horizontal");
