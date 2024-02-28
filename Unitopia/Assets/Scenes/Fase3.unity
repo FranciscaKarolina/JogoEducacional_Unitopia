@@ -2832,6 +2832,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &622598177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 828092298945141208, guid: 149a6cb6996f8c34d8eccb7ef485e935, type: 3}
+  m_PrefabInstance: {fileID: 6732108396685514404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681724440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3353,6 +3358,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4648266564379276050, guid: 149a6cb6996f8c34d8eccb7ef485e935, type: 3}
   m_PrefabInstance: {fileID: 6732108396685514404}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &1007685769
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 622598177}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 0815a013c6af4df45b3215be86eeb95c, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: f6bcdb0177a175f478f8f931511fda6b, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1051399690
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,7 +4575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342.51, y: 171.5}
+  m_AnchoredPosition: {x: -326.7, y: 144.4}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1927007225
@@ -5442,7 +5463,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 828092298945141208, guid: 149a6cb6996f8c34d8eccb7ef485e935, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1007685769}
   m_SourcePrefab: {fileID: 100100000, guid: 149a6cb6996f8c34d8eccb7ef485e935, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
