@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Move2d : MonoBehaviour
 {
-    public BarraVida barra;
-    private float vida = 100;
     public Rigidbody2D rb;
     public Animator animacao;
     public int moveSpeed;
@@ -60,11 +58,5 @@ public class Move2d : MonoBehaviour
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
         
         animacao.SetFloat("Velocidade", Mathf.Abs(direction));
-
-        //vida do jogador
-        if(Input.GetKeyDown(KeyCode.Space)){
-            vida -= 10.0f;
-            barra.AlterarVida(vida);
-        }
     }
 }
