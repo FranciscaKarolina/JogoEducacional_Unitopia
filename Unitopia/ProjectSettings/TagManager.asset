@@ -6,6 +6,12 @@ TagManager:
   tags:
   - frasco
   - frasco5
+  - Jogador
+  - valor2
+  - valor10
+  - valor8
+  - valor5
+  - valor4
   layers:
   - Default
   - TransparentFX

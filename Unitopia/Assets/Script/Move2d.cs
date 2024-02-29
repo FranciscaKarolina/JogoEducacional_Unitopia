@@ -19,6 +19,8 @@ public class Move2d : MonoBehaviour
 
     public int pulosExtras = 1;
 
+    public int coletaveis;
+
     void Start()
     {
         //Personagem virar para a direita//
@@ -40,7 +42,7 @@ public class Move2d : MonoBehaviour
         // Verifica a entrada do jogador para pular
         if(Input.GetButtonDown("Jump") && (taNoChao || pulosExtras > 0))
         {
-            rb.velocity = Vector2.up * 15;
+            rb.velocity = Vector2.up * 18;
             pulosExtras -= 1;
         }
 
@@ -58,5 +60,31 @@ public class Move2d : MonoBehaviour
         rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
         
         animacao.SetFloat("Velocidade", Mathf.Abs(direction));
+    }
+    public ColetaFrasco coletaFrascos;
+    private void OnTriggerEnter2D(Collider2D collision){
+        if (collision.gameObject.CompareTag("valor2"))
+        {
+            coletaFrascos.ColetarFrasco(2);
+        }
+        else if (collision.gameObject.CompareTag("valor4"))
+        {
+            coletaFrascos.ColetarFrasco(5);
+        }
+        else if (collision.gameObject.CompareTag("valor5"))
+        {
+            coletaFrascos.ColetarFrasco(4);
+        }
+        else if (collision.gameObject.CompareTag("valor8"))
+        {
+            coletaFrascos.ColetarFrasco(8);
+        }
+        else if (collision.gameObject.CompareTag("valor10"))
+        {
+            coletaFrascos.ColetarFrasco(10);
+        }
+
+        Destroy(collision.gameObject);
+
     }
 }
