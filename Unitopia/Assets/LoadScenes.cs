@@ -5,18 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class LoadScenes : MonoBehaviour
 {
-    //Menu
+    [SerializeField] private string nomeDoLevelDoJogo;
+    [SerializeField] private GameObject painelMenuInicial;
+    [SerializeField] private GameObject painelOpcoes;
     public void MenuScene(){
         SceneManager.LoadScene("Menu");
     }
-
-    public void Options()
-    {
-        SceneManager.LoadScene("Options");
+    public void Jogar (){
+        SceneManager.LoadScene(nomeDoLevelDoJogo);
     }
-    public void Creditos()
+    public void AbrirOptions()
     {
-        SceneManager.LoadScene("Creditos");
+        painelMenuInicial.SetActive(false);
+        painelOpcoes.SetActive(true);
+    }
+    public void FecharOptions()
+    {
+        painelMenuInicial.SetActive(true);
+        painelOpcoes.SetActive(false);
     }
     public void SelectLevel()
     {
@@ -24,6 +30,7 @@ public class LoadScenes : MonoBehaviour
     }
     public void QuitGame()
     {
+        Debug.Log("Sair do jogo");
         Application.Quit();
     }
     
